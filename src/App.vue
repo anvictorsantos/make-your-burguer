@@ -2,6 +2,7 @@
   <div>
     <HelloWorldComponent />
     <LifeCycle email="meuemail@email.com" @change-image="changeImage(1)" />
+    <button @click="goToAbout">goToAbout</button>
   </div>
 </template>
 
@@ -15,6 +16,9 @@ export default {
   methods: {
     changeImage(i) {
       alert(`clicked ${i++} times`)
+    },
+    goToAbout() {
+      this.$router.push('/about')
     },
   },
 }
