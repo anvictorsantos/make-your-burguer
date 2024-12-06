@@ -1,25 +1,16 @@
 <template>
-  <div>
-    <HelloWorldComponent />
-    <LifeCycle email="meuemail@email.com" @change-image="changeImage(1)" />
-    <button @click="goToAbout">goToAbout</button>
-  </div>
+  <NavbarComponent />
+  <main>
+    <RouterView />
+  </main>
+  <FooterComponent />
 </template>
 
 <script>
-import HelloWorldComponent from './components/HelloWorldComponent.vue'
-import LifeCycle from './components/LifeCycle.vue'
+import NavbarComponent from '@/components/NavbarComponent.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
 
 export default {
-  name: 'App',
-  components: { HelloWorldComponent, LifeCycle },
-  methods: {
-    changeImage(i) {
-      alert(`clicked ${i++} times`)
-    },
-    goToAbout() {
-      this.$router.push('/about')
-    },
-  },
+  components: { NavbarComponent, FooterComponent },
 }
 </script>
