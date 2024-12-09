@@ -1,9 +1,9 @@
 <template>
-  <NavbarComponent />
+  <NavbarComponent :logo="logoSrc" :alt="altName" />
   <main>
     <RouterView />
   </main>
-  <FooterComponent />
+  <FooterComponent :logo="logoSrc" :alt="altName" />
 </template>
 
 <script>
@@ -12,5 +12,11 @@ import FooterComponent from '@/components/FooterComponent.vue'
 
 export default {
   components: { NavbarComponent, FooterComponent },
+  data() {
+    return {
+      logoSrc: '/img/logo.webp',
+      altName: 'foodwagon',
+    }
+  },
 }
 </script>
